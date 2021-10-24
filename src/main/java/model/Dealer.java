@@ -46,11 +46,7 @@ public class Dealer extends Player {
    */
   public boolean hit(Player player) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
-      Card.Mutable c;
-      c = deck.getCard();
-      c.show(true);
-      player.dealCard(c);
-
+      dealCard(player, true);
       return true;
     }
     return false;
@@ -93,4 +89,16 @@ public class Dealer extends Player {
     }
     return false;
   }
+
+  /**
+   * Method to get the card from deck and add to dealer's hand.
+   * 
+   * @param player
+   * @param isShow check if the card is hidden to show.
+   */
+  public void dealCard(Player player, boolean isShown) {
+		Card c = deck.getCard();
+		c.show(isShown);
+		player.dealCard(c);
+	}
 }

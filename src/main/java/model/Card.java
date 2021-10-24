@@ -20,29 +20,29 @@ public class Card {
   }
 
 
-  /**
-   * Represents a Mutable playing card, that can be shown or hidden.
-   */
-  public static class Mutable extends Card {
-    /**
-      * Initalizing constructor that creates a hidden card.
+  // /**
+  //  * Represents a Mutable playing card, that can be shown or hidden.
+  //  */
+  // public static class Mutable extends Card {
+  //   /**
+  //     * Initalizing constructor that creates a hidden card.
 
-      * @param color The color of the card.
-      * @param value The value of the card.
-     */
-    public Mutable(Color color, Value value) {
-      super(color, value);
-    }
+  //     * @param color The color of the card.
+  //     * @param value The value of the card.
+  //    */
+  //   public Mutable(Color color, Value value) {
+  //     super(color, value);
+  //   }
 
-    /**
-     * Initalizing constructor that creates a hidden card.
+  //   /**
+  //    * Initalizing constructor that creates a hidden card.
 
-      * @param show true if the card is to be shown.
-      */
-    public void show(boolean show) {
-      isHidden = !show;
-    }
-  }
+  //     * @param show true if the card is to be shown.
+  //     */
+  //   public void show(boolean show) {
+  //     isHidden = !show;
+  //   }
+  // }
 
   private Color color;
   private Value value;
@@ -82,6 +82,15 @@ public class Card {
       return Value.Hidden;
     }
     return value;
+  }
+
+  /**
+   * Method to show hidden card.
+   * 
+   * @param show true if the card is to be shown.
+   */
+  public void show(boolean isShown) {
+    isHidden = !isShown;
   }
 
   

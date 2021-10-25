@@ -9,6 +9,7 @@ import java.util.List;
 public class Player {
 
   private List<Card> hand;
+  protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
   public Player() {
@@ -79,5 +80,20 @@ public class Player {
     }
 
     return score;
+  }
+
+  /**
+   * Method to check if player has Ace.
+   * 
+   */
+  public boolean checkAceExistance() {
+    if(calcScore() == hitlimit) {
+      for(Card c: getHand()) {
+        if (c.getValue() == Card.Value.Ace) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

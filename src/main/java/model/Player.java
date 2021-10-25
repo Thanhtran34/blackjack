@@ -13,6 +13,7 @@ public class Player {
 
   public Player() {
     hand = new LinkedList<Card>();
+    observers = new LinkedList<Observer>();
   }
 
   /**
@@ -93,7 +94,7 @@ public class Player {
    * Method to add observer.
    *
    */
-  public void addObserver (Observer observer) throws NullPointerException {
+  public void addObserver (Observer observer) {
     observers.add(observer);
   }
 

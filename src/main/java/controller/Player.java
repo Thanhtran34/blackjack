@@ -1,13 +1,22 @@
 package controller;
 
 import model.Game;
+import model.Observer;
 import view.View;
 
 
 /**
  * Scenario controller for playing the game.
  */
-public class Player {
+public class Player implements Observer {
+  private Game game;
+  private View view;
+
+  public Player(Game game, View view) {
+    this.game = game;
+    this.view = view;
+    game.createNewGameObserver(this);
+  }
 
   /**
    * Runs the play use case.
@@ -16,7 +25,7 @@ public class Player {
    * @param view The view to use.
    * @return True as long as the game should continue.
    */
-  public boolean play(Game game, View view) {
+  public boolean play() {
     view.displayWelcomeMessage();
 
     view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
@@ -37,5 +46,11 @@ public class Player {
     }
 
     return input != 'q';
+  }
+
+  @Override
+  public void update() {
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
   }
 }

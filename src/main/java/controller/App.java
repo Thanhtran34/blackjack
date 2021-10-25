@@ -13,13 +13,13 @@ public class App {
 
   * @param args Not used.
   */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws NullPointerException{
 
     Game g = new Game();
     View v = new EnglishView(); // new SwedishView();
-    Player ctrl = new Player();
+    Player ctrl = new Player(g, v);
 
-    while (ctrl.play(g, v)) {
+    while (ctrl.play()) {
 
     }
   }

@@ -9,15 +9,24 @@ public class RulesFactory {
    * @return The rule to use
    */
   public HitStrategy getHitRule() {
-    return new BasicHitStrategy();
+    return new SoftSevenTeenStrategy();
   }
 
   /**
-   * Crates the rule to use when starting a new game.
+   * Create the rule to use when starting a new game.
    *
    * @return The rule to use.
    */
   public NewGameStrategy getNewGameRule() {
     return new AmericanNewGameStrategy();
+  }
+
+  /**
+   * Create the rule to use the winner strategy.
+   *
+   * @return The rule to use.
+   */
+  public WinStrategy getWinnerStrategy() {
+    return new DealerWinStrategy();
   }
 }

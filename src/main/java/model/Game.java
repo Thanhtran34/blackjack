@@ -92,5 +92,14 @@ public class Game {
   public int getPlayerScore() {
     return player.calcScore();
   }
+
+  /**
+   * Method to create new game observer.
+   *
+   */
+  public void createNewGameObserver( Observer observer){
+    dealer.addObserver(observer);
+    player.addObserver(observer);
+  };
 }
 

@@ -7,6 +7,7 @@ import java.util.List;
 public class Player {
 
   private List<Card> hand;
+  private List<Observer> observers;
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
@@ -86,5 +87,31 @@ public class Player {
       }
     }
     return false;
+  }
+
+  /**
+   * Method to add observer.
+   *
+   */
+  public void addObserver (Observer observer) throws NullPointerException {
+    observers.add(observer);
+  }
+
+  /**
+   * Method to remove observer.
+   *
+   */
+  public void removeObserver(Observer observer) {
+    observers.remove(observer);
+  }
+
+  /**
+   * Method to notify observer.
+   *
+   */
+  public void notifyObserver() {
+    for (Observer observer : observers) {
+      observer.update();
+    }
   }
 }

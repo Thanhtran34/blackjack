@@ -33,7 +33,7 @@ public class Dealer extends Player {
       deck = new Deck();
       clearHand();
       player.clearHand();
-      return newGameRule.newGame(deck, this, player);
+      return newGameRule.newGame(this, player);
     }
     return false;
   }
@@ -92,13 +92,13 @@ public class Dealer extends Player {
 
   /**
    * Method to get the card from deck and add to dealer's hand.
-   * 
+   *
    * @param player
-   * @param isShow check if the card is hidden to show.
+   * @param isShown check if the card is hidden to show.
    */
   public void dealCard(Player player, boolean isShown) {
-		Card c = deck.getCard();
-		c.show(isShown);
-		player.dealCard(c);
-	}
+    Card c = deck.getCard();
+    c.show(isShown);
+    player.dealCard(c);
+  }
 }

@@ -3,6 +3,10 @@ package model.rules;
 import model.Dealer;
 import model.Player;
 
+/**
+ * A class for player winning streategy.
+ * 
+ */
 public class PlayerWinStrategy implements WinStrategy {
 
   @Override

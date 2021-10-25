@@ -99,7 +99,7 @@ public class Card {
   /**
    * Method to show hidden card.
    *
-   * @param show true if the card is to be shown.
+   * @param isShown true if the card is to be shown.
    */
   public void show(boolean isShown) {
     isHidden = !isShown;

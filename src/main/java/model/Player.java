@@ -86,7 +86,7 @@ public class Player {
    * Method to check if player has Ace.
    * 
    */
-  public boolean checkAceExistance() {
+  public boolean hasAceCard() {
     if(calcScore() == hitlimit) {
       for(Card c: getHand()) {
         if (c.getValue() == Card.Value.Ace) {

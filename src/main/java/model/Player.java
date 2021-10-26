@@ -1,14 +1,13 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /** Represents a player in the Black Jack game. A Player has a hand of cards. */
-public class Player {
+public class Player extends Subject{
 
   private List<Card> hand;
-  private List<Observer> observers = new LinkedList<>();
+  private Observer observer;
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
@@ -91,28 +90,12 @@ public class Player {
   }
 
   /**
-   * Method to add observer.
+   * Method to set the observer.
    *
+   * @param observer
    */
-  public void addObserver (Observer observer) {
-    observers.add(observer);
-  }
-
-  /**
-   * Method to remove observer.
-   *
-   */
-  public void removeObserver(Observer observer) {
-    observers.remove(observer);
-  }
-
-  /**
-   * Method to notify observer.
-   *
-   */
-  public void notifyObserver() {
-    for (Observer observer : observers) {
-      observer.update();
-    }
+  public void setObserver(Observer observer) {
+    this.observer = observer;
+    notifyObservers();
   }
 }

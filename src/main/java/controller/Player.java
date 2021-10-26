@@ -15,21 +15,19 @@ public class Player implements Observer {
   public Player(Game game, View view) {
     this.game = game;
     this.view = view;
-    game.createNewGameObserver(this);
+    game.addGameObserver(this);
+    game.getPlayer().setObserver(this);
+    game.getDealer().setObserver(this);
   }
 
   /**
    * Runs the play use case.
-
-   * @param game The game state.
-   * @param view The view to use.
+   *
    * @return True as long as the game should continue.
    */
   public boolean play() {
     view.displayWelcomeMessage();
-
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    this.showHands();
 
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
@@ -48,9 +46,17 @@ public class Player implements Observer {
     return input != 'q';
   }
 
-  @Override
-  public void update() {
+  /**
+   * Method to show hands of dealer and player.
+   * 
+   */
+  private void showHands() {
     view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
     view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+  }
+
+  @Override
+  public void update() {
+    this.showHands();
   }
 }

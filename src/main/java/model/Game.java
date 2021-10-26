@@ -93,13 +93,22 @@ public class Game {
     return player.calcScore();
   }
 
+  /** Method to get the dealer. */
+  public Dealer getDealer() {
+    return this.dealer;
+  }
+
+  /** Method to get the player. */
+  public Player getPlayer() {
+    return this.player;
+  }
+
   /**
-   * Method to create new game observer.
+   * Method to add observer for player and dealer.
    *
    */
-  public void createNewGameObserver( Observer observer){
+  public void addGameObserver(Observer observer) {
     dealer.addObserver(observer);
     player.addObserver(observer);
-  };
+  }
 }
-

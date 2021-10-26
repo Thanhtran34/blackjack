@@ -23,6 +23,6 @@ public class PlayerWinStrategy implements WinStrategy {
     if(playerScore == dealerScore && playerScore != score) {
       return false;
     }
-    return true;
+    return false;
   }
 }

@@ -4,10 +4,7 @@ import model.Game;
 import model.Observer;
 import view.View;
 
-
-/**
- * Scenario controller for playing the game.
- */
+/** Scenario controller for playing the game. */
 public class Player implements Observer {
   private Game game;
   private View view;
@@ -16,8 +13,7 @@ public class Player implements Observer {
     this.game = game;
     this.view = view;
     game.addGameObserver(this);
-    game.getPlayer().setObserver(this);
-    game.getDealer().setObserver(this);
+    game.setGameObserver(this);
   }
 
   /**
@@ -46,10 +42,7 @@ public class Player implements Observer {
     return input != 'q';
   }
 
-  /**
-   * Method to show hands of dealer and player.
-   * 
-   */
+  /** Method to show hands of dealer and player. */
   private void showHands() {
     view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
     view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());

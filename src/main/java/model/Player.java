@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /** Represents a player in the Black Jack game. A Player has a hand of cards. */
-public class Player extends Subject{
+public class Player extends Subject {
 
   private List<Card> hand;
   private Observer observer;

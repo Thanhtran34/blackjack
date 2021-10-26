@@ -68,9 +68,9 @@ public class EnglishView implements View {
   public void displayGameOver(boolean dealerIsWinner) {
     System.out.println("GameOver: ");
     if (dealerIsWinner) {
-      System.out.println("Dealer Won!");
+      System.out.println("\033[1;31m" + "Dealer Won!");
     } else {
-      System.out.println("You Won!");
+      System.out.println("\033[1;31m" + "You Won!");
     }
   }
 }

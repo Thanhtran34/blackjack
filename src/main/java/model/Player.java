@@ -8,7 +8,7 @@ import java.util.List;
 public class Player {
 
   private List<Card> hand;
-  private List<Observer> observers = new ArrayList<>();
+  private List<Observer> observers = new LinkedList<>();
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 

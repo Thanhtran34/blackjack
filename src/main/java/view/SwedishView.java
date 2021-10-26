@@ -77,9 +77,9 @@ public class SwedishView implements View {
   public void displayGameOver(boolean dealerIsWinner) {
     System.out.println("Slut: ");
     if (dealerIsWinner) {
-      System.out.println("Croupiern Vann!");
+      System.out.println("\033[1;31m" + "Croupiern Vann!");
     } else {
-      System.out.println("Du vann!");
+      System.out.println("\033[1;31m" + "Du vann!");
     }
   }
 

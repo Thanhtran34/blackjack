@@ -14,12 +14,15 @@ public class DealerWinStrategy implements WinStrategy {
     int playerScore = player.calcScore();
     int dealerScore = dealer.calcScore();
 
-    if (dealerScore > score) {
+    if(dealerScore > playerScore && dealerScore < score) {
       return true;
-    } else if (playerScore > score) {
-      return false;
     }
-
-    return dealerScore >= playerScore;
+    if (playerScore > score || dealerScore == score) {
+      return true;
+    }
+    if(dealerScore == playerScore && playerScore != score) {
+      return true;
+    }
+    return false;
   }
 }

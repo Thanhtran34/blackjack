@@ -59,6 +59,7 @@ public class Card {
   private Color color;
   private Value value;
   protected boolean isHidden;
+  protected boolean isVisible;
 
   /**
    * Initalizing constructor that creates a hidden card.
@@ -103,5 +104,21 @@ public class Card {
    */
   public void show(boolean isShown) {
     isHidden = !isShown;
+  }
+
+  /**
+   * Method for marking that a card is aldready shown.
+   * 
+   */
+  public void labelCardIsShown() {
+    isVisible = true;
+  }
+
+  /**
+   * Method for checking if card is shown.
+   * 
+   */
+  public boolean isCardShown() {
+    return isVisible;
   }
 }

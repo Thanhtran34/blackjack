@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,13 +8,12 @@ import java.util.List;
 public class Player {
 
   private List<Card> hand;
-  private List<Observer> observers;
+  private List<Observer> observers = new ArrayList<>();
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
   public Player() {
     hand = new LinkedList<Card>();
-    observers = new LinkedList<Observer>();
   }
 
   /**

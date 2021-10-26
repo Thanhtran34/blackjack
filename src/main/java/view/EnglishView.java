@@ -35,6 +35,7 @@ public class EnglishView implements View {
   }
 
   public void displayCard(model.Card card) {
+    
     System.out.println("" + card.getValue() + " of " + card.getColor());
   }
 

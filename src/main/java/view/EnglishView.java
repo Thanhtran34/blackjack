@@ -1,13 +1,9 @@
 package view;
 
-/**
- * Implements an english console view.
- */
+/** Implements an english console view. */
 public class EnglishView implements View {
 
-  /**
-   * Shows a welcome message.
-   */
+  /** Shows a welcome message. */
   public void displayWelcomeMessage() {
     for (int i = 0; i < 50; i++) {
       System.out.print("\n");
@@ -18,7 +14,7 @@ public class EnglishView implements View {
 
   /**
    * Returns pressed characters from the keyboard.
-
+   *
    * @return the pressed character.
    */
   public int getInput() {
@@ -35,8 +31,16 @@ public class EnglishView implements View {
   }
 
   public void displayCard(model.Card card) {
-    
-    System.out.println("" + card.getValue() + " of " + card.getColor());
+    if (card.isCardShown() == false) {
+      try {
+        Thread.sleep(2000);
+        card.labelCardIsShown();
+        System.out.println("\033[0;33m" + "***processing***");
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+    System.out.println("\033[0;32m" + "" + card.getValue() + " of " + card.getColor());
   }
 
   public void displayPlayerHand(Iterable<model.Card> hand, int score) {
@@ -58,7 +62,7 @@ public class EnglishView implements View {
 
   /**
    * Displays the winner of the game.
-
+   *
    * @param dealerIsWinner True if the dealer is the winner.
    */
   public void displayGameOver(boolean dealerIsWinner) {
@@ -68,6 +72,5 @@ public class EnglishView implements View {
     } else {
       System.out.println("You Won!");
     }
-
   }
 }

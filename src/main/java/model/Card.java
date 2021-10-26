@@ -106,18 +106,12 @@ public class Card {
     isHidden = !isShown;
   }
 
-  /**
-   * Method for marking that a card is aldready shown.
-   * 
-   */
+  /** Method for marking that a card is aldready shown. */
   public void labelCardIsShown() {
     isVisible = true;
   }
 
-  /**
-   * Method for checking if card is shown.
-   * 
-   */
+  /** Method for checking if card is shown. */
   public boolean isCardShown() {
     return isVisible;
   }

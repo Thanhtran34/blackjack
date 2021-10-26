@@ -42,13 +42,22 @@ public class SwedishView implements View {
    * @param card The card to display.
    */
   public void displayCard(model.Card card) {
+    if (card.isCardShown() == false) {
+      try {
+        Thread.sleep(2000);
+        card.labelCardIsShown();
+        System.out.println("\033[0;33m" + "***processing***");
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
     if (card.getColor() == model.Card.Color.Hidden) {
       System.out.println("Dolt Kort");
     } else {
       String[] colors = { "Hjärter", "Spader", "Ruter", "Klöver" };
       String[] values = { "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio",
                           "knekt", "dam", "kung", "ess" };
-      System.out.println("" + colors[card.getColor().ordinal()] + " " + values[card.getValue().ordinal()]);
+      System.out.println("\033[0;32m" + "" + colors[card.getColor().ordinal()] + " " + values[card.getValue().ordinal()]);
     }
   }
 

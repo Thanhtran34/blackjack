@@ -16,6 +16,14 @@ public class Player implements Observer {
     game.setGameObserver(this);
   }
 
+  public enum InputMenu {
+    PLAY,
+    HIT,
+    STAND,
+    QUIT,
+    NOTVALID
+  }
+
   /**
    * Runs the play use case.
    *
@@ -29,17 +37,17 @@ public class Player implements Observer {
       view.displayGameOver(game.isDealerWinner());
     }
 
-    int input = view.getInput();
+    InputMenu input = view.getInput();
 
-    if (input == 'p') {
+    if (input == InputMenu.PLAY) {
       game.newGame();
-    } else if (input == 'h') {
+    } else if (input == InputMenu.HIT) {
       game.hit();
-    } else if (input == 's') {
+    } else if (input == InputMenu.STAND) {
       game.stand();
     }
 
-    return input != 'q';
+    return input != InputMenu.QUIT;
   }
 
   /** Method to show hands of dealer and player. */

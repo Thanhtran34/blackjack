@@ -1,5 +1,7 @@
 package view;
 
+import controller.Player.InputMenu;
+
 /** Implements an english console view. */
 public class EnglishView implements View {
 
@@ -17,16 +19,26 @@ public class EnglishView implements View {
    *
    * @return the pressed character.
    */
-  public int getInput() {
+  public InputMenu getInput() {
     try {
       int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      return c;
+			while (c == '\r' || c == '\n') {
+				c = System.in.read();
+			}
+			if (c == 'p') {
+				return InputMenu.PLAY;
+			} else if (c == 's') {
+				return InputMenu.STAND;
+			} else if (c == 'h') {
+				return InputMenu.HIT;
+			} else if (c == 'q') {
+				return InputMenu.QUIT;
+			} else {
+				return InputMenu.NOTVALID;
+			}
     } catch (java.io.IOException e) {
       System.out.println("" + e);
-      return 0;
+      return InputMenu.NOTVALID;
     }
   }
 

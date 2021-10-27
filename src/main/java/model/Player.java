@@ -82,7 +82,7 @@ public class Player extends Subject {
   }
 
   /** Method to check if player has Ace. */
-  public boolean hasAceCard() {
+  public boolean hasSoftAceCard() {
     if (calcScore() == hitlimit) {
       for (Card c : getHand()) {
         if (c.getValue() == Card.Value.Ace) {

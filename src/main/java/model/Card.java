@@ -83,12 +83,12 @@ public class Card {
   }
 
   /** Method for marking that a card is aldready shown. */
-  public void labelCardIsShown() {
+  public void markCardOnTable() {
     isVisible = true;
   }
 
   /** Method for checking if card is shown. */
-  public boolean isCardShown() {
+  public boolean isCardOnTable() {
     return isVisible;
   }
 }

@@ -11,7 +11,7 @@ public class SoftSevenTeenStrategy implements HitStrategy {
 
   @Override
   public boolean doHit(Player dealer) {
-    if (dealer.calcScore() == hitLimit && dealer.hasAceCard()) {
+    if (dealer.calcScore() == hitLimit && dealer.hasSoftAceCard()) {
       return true;
     } else if (dealer.calcScore() < hitLimit) {
       return true;

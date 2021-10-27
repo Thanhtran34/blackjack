@@ -47,10 +47,10 @@ public class EnglishView implements View {
    * 
    */
   public void displayCard(model.Card card) {
-    if (card.isCardShown() == false) {
+    if (card.isCardOnTable() == false) {
       try {
         Thread.sleep(1500);
-        card.labelCardIsShown();
+        card.markCardOnTable();
         System.out.println("\033[0;33m" + "***processing***");
       } catch (InterruptedException e) {
         e.printStackTrace();

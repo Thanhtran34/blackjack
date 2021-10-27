@@ -22,26 +22,30 @@ public class EnglishView implements View {
   public InputMenu getInput() {
     try {
       int c = System.in.read();
-			while (c == '\r' || c == '\n') {
-				c = System.in.read();
-			}
-			if (c == 'p') {
-				return InputMenu.PLAY;
-			} else if (c == 's') {
-				return InputMenu.STAND;
-			} else if (c == 'h') {
-				return InputMenu.HIT;
-			} else if (c == 'q') {
-				return InputMenu.QUIT;
-			} else {
-				return InputMenu.NOTVALID;
-			}
+      while (c == '\r' || c == '\n') {
+        c = System.in.read();
+      }
+      if (c == 'p') {
+        return InputMenu.PLAY;
+      } else if (c == 's') {
+        return InputMenu.STAND;
+      } else if (c == 'h') {
+        return InputMenu.HIT;
+      } else if (c == 'q') {
+        return InputMenu.QUIT;
+      } else {
+        return InputMenu.NOTVALID;
+      }
     } catch (java.io.IOException e) {
       System.out.println("" + e);
       return InputMenu.NOTVALID;
     }
   }
 
+  /**
+   * Method to display the card on the table.
+   * 
+   */
   public void displayCard(model.Card card) {
     if (card.isCardShown() == false) {
       try {

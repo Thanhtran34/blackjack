@@ -16,7 +16,7 @@ public class Dealer extends Player {
   /**
    * Initializing constructor.
    *
-   * @param rulesFactory A factory that creates the rules to use.
+   * @param rulesFactory - A factory that creates the rules to use.
    */
   public Dealer(RulesFactory rulesFactory) {
 
@@ -28,8 +28,8 @@ public class Dealer extends Player {
   /**
    * Starts a new game if the game is not currently under way.
    *
-   * @param player The player to play agains.
-   * @return True if the game could be started.
+   * @param player - The player to play agains.
+   * @return True - if the game could be started.
    */
   public boolean newGame(Player player) {
     if (deck == null || isGameOver()) {
@@ -44,8 +44,8 @@ public class Dealer extends Player {
   /**
    * Gives the player one more card if possible. I.e. the player hits.
    *
-   * @param player The player to give a card to.
-   * @return true if the player could get a new card, false otherwise.
+   * @param player - The player to give a card to.
+   * @return true - if the player could get a new card, false otherwise.
    */
   public boolean hit(Player player) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
@@ -58,8 +58,8 @@ public class Dealer extends Player {
   /**
    * Checks if the dealer is the winner compared to a player.
    *
-   * @param player The player to check agains.
-   * @return True if the dealer is the winner, false if the player is the winner.
+   * @param player - The player to check agains.
+   * @return True - if the dealer is the winner, false if the player is the winner.
    */
   public boolean isDealerWinner(Player player) {
     return winStrategy.isWinner(player, this, maxScore);
@@ -68,7 +68,7 @@ public class Dealer extends Player {
   /**
    * Checks if the game is over, i.e. the dealer can take no more cards.
    *
-   * @return True if the game is over.
+   * @return True - if the game is over.
    */
   public boolean isGameOver() {
     if (deck != null && hitRule.doHit(this) != true) {
@@ -91,8 +91,8 @@ public class Dealer extends Player {
   /**
    * Method to get the card from deck and add to dealer's hand.
    *
-   * @param player
-   * @param isShown check if the card is hidden to show.
+   * @param player - the player of the game.
+   * @param isShown - check if the card is hidden to show.
    */
   public void dealCard(Player player, boolean isShown) {
     Card c = deck.getCard();

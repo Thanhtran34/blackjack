@@ -11,6 +11,10 @@ public class Player extends Subject {
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
+  /**
+   * An instance of the Player class.
+   * 
+   */
   public Player() {
     hand = new LinkedList<Card>();
   }
@@ -18,7 +22,7 @@ public class Player extends Subject {
   /**
    * Adds a card to the Player's hand.
    *
-   * @param addToHand The card to add to the hand.
+   * @param addToHand - The card to add to the hand.
    */
   public void dealCard(Card addToHand) {
     hand.add(addToHand);
@@ -48,7 +52,7 @@ public class Player extends Subject {
   /**
    * Calculates the score of the hand according to Black Jack rules.
    *
-   * @return The score.
+   * @return The score - the total score
    */
   public int calcScore() {
     // the number of scores is dependant on the number of scorable values
@@ -92,7 +96,7 @@ public class Player extends Subject {
   /**
    * Method to set the observer.
    *
-   * @param observer
+   * @param observer - the observer which gets information of update.
    */
   public void setObserver(Observer observer) {
     this.observer = observer;

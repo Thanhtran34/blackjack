@@ -8,14 +8,23 @@ import view.View;
 public class Player implements Observer {
   private Game game;
   private View view;
-
+  
+  /**
+   * An instance of the Player class.
+   * @param game
+   * @param view
+   */
   public Player(Game game, View view) {
     this.game = game;
     this.view = view;
     game.addGameObserver(this);
     game.setGameObserver(this);
   }
-
+  
+  /**
+   * Enum for user input.
+   * 
+   */
   public enum InputMenu {
     PLAY,
     HIT,

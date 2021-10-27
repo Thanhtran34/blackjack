@@ -3,10 +3,7 @@ package model.rules;
 import model.Dealer;
 import model.Player;
 
-/**
- * A class for dealer winning streategy.
- * 
- */
+/** A class for dealer winning streategy. */
 public class DealerWinStrategy implements WinStrategy {
 
   @Override
@@ -14,13 +11,13 @@ public class DealerWinStrategy implements WinStrategy {
     int playerScore = player.calcScore();
     int dealerScore = dealer.calcScore();
 
-    if(dealerScore > playerScore && dealerScore < score) {
+    if (dealerScore > playerScore && dealerScore < score) {
       return true;
     }
     if (playerScore > score || dealerScore == score) {
       return true;
     }
-    if(dealerScore == playerScore && playerScore != score) {
+    if (dealerScore == playerScore && playerScore != score) {
       return true;
     }
     return false;

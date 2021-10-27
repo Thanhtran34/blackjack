@@ -6,6 +6,11 @@ The application uses the model-view-controller (MVC) architectural pattern. The 
 
 ![class diagram](img/class_diagram.jpg)
 
+
+The class diagram after modification for soft17 and winStrategy together with Observer pattern.
+
+![new class diagram](img/class-diagram-changed.png)
+
 ## Stand - Sequence Diagram
 This is the detailed sequence diagram for the `Game.stand` method. This is what should be implemented.
 

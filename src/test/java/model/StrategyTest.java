@@ -56,7 +56,4 @@ public class StrategyTest {
     playerScore = player.calcScore();
     Assertions.assertEquals(dealerStrategy.isWinner(player, dealerD, maxScore), true);
   }
-
 }
-
-

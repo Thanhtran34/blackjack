@@ -11,8 +11,7 @@ public class Player implements Observer {
   
   /**
    * An instance of the Player class.
-   * @param game
-   * @param view
+   * 
    */
   public Player(Game game, View view) {
     this.game = game;

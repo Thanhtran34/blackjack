@@ -11,10 +11,7 @@ public class Player extends Subject {
   protected final int hitlimit = 17;
   protected final int maxScore = 21;
 
-  /**
-   * An instance of the Player class.
-   * 
-   */
+  /** Constructor that creates a new player instance with hand and cards. */
   public Player() {
     hand = new LinkedList<Card>();
   }

@@ -8,22 +8,16 @@ import view.View;
 public class Player implements Observer {
   private Game game;
   private View view;
-  
-  /**
-   * An instance of the Player class.
-   * 
-   */
+
+  /** An instance of the Player class. */
   public Player(Game game, View view) {
     this.game = game;
     this.view = view;
     game.addGameObserver(this);
     game.setGameObserver(this);
   }
-  
-  /**
-   * Enum for user input.
-   * 
-   */
+
+  /** Enum for user input. */
   public enum InputMenu {
     PLAY,
     HIT,
@@ -39,7 +33,8 @@ public class Player implements Observer {
    */
   public boolean play(Game game, View view) {
     view.displayWelcomeMessage();
-    this.showHands();
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
 
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
@@ -58,14 +53,9 @@ public class Player implements Observer {
     return input != InputMenu.QUIT;
   }
 
-  /** Method to show hands of dealer and player. */
-  private void showHands() {
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
-  }
-
   @Override
   public void update() {
-    this.showHands();
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
   }
 }

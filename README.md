@@ -4,10 +4,11 @@ Assignment 3, grade 2 and 3.
 
 ## Welcome to Black Jack Game
 
-- This is an implementation of a simple Black Jack game (American Style) which uses GoF pattern like Startegy Pattern, Abstract Factory Pattern and Obsever Pattern to increase the cohesion and to achieve the low coupling among classes. This apps follos MVC pattern to separate view, controller and model package.
+- This is an implementation of a simple Black Jack game (American Style) which uses GoF pattern like Startegy Pattern, Abstract Factory Pattern and Obsever Pattern to increase the cohesion and to achieve the low coupling among classes. This apps follos MVC pattern to separate view, controller and model packages.
 
 **SofSevenTeenStrategy**
-- This strategy will let the Dealer continue to get more card if Dealer has SoftAce which means that DealerScore is 17 with combination of Ace and (Ace, two, two, two). This accepts Dealer to have more card on hand if his score is under 17 too.
+- This strategy will let the Dealer continue to get more card if Dealer has SoftAce which means that DealerScore is 17 with combination of Ace and (Ace, two, two, two) or (Ace, two, four), (Ace, three, three) or other cases with Ace. This accepts Dealer to have more card on hand if his score is under 17 too.
+- The Dealer will draw a new card if he has SoftAce (soft hand). It means that he will continue to hit with Soft17 but he will stand in Hard17 (No Ace card).
 - Unit test for this strategy is in the test folder.
 
 **WinStrategy**

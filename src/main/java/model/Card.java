@@ -47,6 +47,7 @@ public class Card {
     this.value = value;
     this.color = color;
     isHidden = true;
+    isVisible = false;
   }
 
   /**

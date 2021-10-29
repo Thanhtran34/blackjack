@@ -14,6 +14,9 @@ public class PlayerWinStrategy implements WinStrategy {
     if (playerScore > dealerScore && dealerScore != score) {
       return true;
     }
+    if (playerScore == score) {
+      return true;
+    }
     if (playerScore > score) {
       return false;
     }

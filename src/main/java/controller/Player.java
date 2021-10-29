@@ -37,7 +37,7 @@ public class Player implements Observer {
    *
    * @return True as long as the game should continue.
    */
-  public boolean play() {
+  public boolean play(Game game, View view) {
     view.displayWelcomeMessage();
     this.showHands();
 

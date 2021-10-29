@@ -22,3 +22,6 @@ Assignment 3, grade 2 and 3.
 - It will have a pause whenever the Dealer or the Player get their cards with the help of Observer pattern and the text
 will be shown in different color in Console to make this game more interesting.
 
+[<img src="./img/game.PNG" width="400" alt="Black Jack Game"/>](./img/game.PNG)
+
+

@@ -16,6 +16,7 @@ public class StrategyTest {
   private int dealerScore;
   private int playerScore;
   private int score;
+  private boolean hasAce = true;
   private SoftSevenTeenStrategy softAce = new SoftSevenTeenStrategy();
   private DealerWinStrategy dealerStrategy = new DealerWinStrategy();
 
@@ -24,7 +25,6 @@ public class StrategyTest {
   public void shouldReturnTrueIfDealerHasSoftAce() {
     score = 17;
     score = dealer.calcScore();
-    boolean hasAce = true;
     hasAce = dealer.hasSoftAceCard();
     Assertions.assertEquals(softAce.doHit(dealer), true);
   }

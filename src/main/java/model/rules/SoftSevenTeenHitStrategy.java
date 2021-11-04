@@ -3,7 +3,7 @@ package model.rules;
 import model.Player;
 
 /** A class for adaption of Soft17 rule. */
-public class SoftSevenTeenStrategy implements HitStrategy {
+public class SoftSevenTeenHitStrategy implements HitStrategy {
   private final int hitLimit = 17;
 
   @Override

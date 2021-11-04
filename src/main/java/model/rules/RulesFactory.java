@@ -9,7 +9,7 @@ public class RulesFactory {
    * @return The rule to use
    */
   public HitStrategy getHitRule() {
-    return new SoftSevenTeenStrategy();
+    return new SoftSevenTeenHitStrategy();
   }
 
   /**

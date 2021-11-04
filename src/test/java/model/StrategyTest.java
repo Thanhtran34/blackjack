@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import model.rules.DealerWinStrategy;
 import model.rules.RulesFactory;
-import model.rules.SoftSevenTeenStrategy;
+import model.rules.SoftSevenTeenHitStrategy;
 
 public class StrategyTest {
   private Player dealer = new Player();
@@ -17,7 +17,7 @@ public class StrategyTest {
   private int playerScore;
   private int score;
   private boolean hasAce = true;
-  private SoftSevenTeenStrategy softAce = new SoftSevenTeenStrategy();
+  private SoftSevenTeenHitStrategy softAce = new SoftSevenTeenHitStrategy();
   private DealerWinStrategy dealerStrategy = new DealerWinStrategy();
 
   @Test

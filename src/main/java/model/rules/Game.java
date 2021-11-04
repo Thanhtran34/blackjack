@@ -7,5 +7,5 @@ public interface Game {
 
   WinStrategy getWinStrategy();
 
-  void accept(GameVisitor a_visitor);
+  void accept(GameVisitor visitor);
 }

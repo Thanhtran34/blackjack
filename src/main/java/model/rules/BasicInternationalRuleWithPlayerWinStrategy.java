@@ -3,19 +3,23 @@ package model.rules;
 public class BasicInternationalRuleWithPlayerWinStrategy implements Game {
   @Override
   public NewGameStrategy getNewGameStrategy() {
-    return null;
+    return new InternationalNewGameStrategy();
   }
 
   @Override
   public HitStrategy getHitStrategy() {
-    return null;
+    return new BasicHitStrategy();
   }
 
   @Override
   public WinStrategy getWinStrategy() {
-    return null;
+    return new PlayerWinStrategy();
   }
 
   @Override
-  public void accept(GameVisitor a_visitor) {}
+  public void accept(GameVisitor visitor) {
+    visitor.applyInternationalNewGameStrategy(this.getNewGameStrategy());
+    visitor.applyBasicHitStrategy(this.getHitStrategy());
+    visitor.applyPlayerWinStrategy(this.getWinStrategy());
+  }
 }

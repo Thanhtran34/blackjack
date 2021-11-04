@@ -3,19 +3,23 @@ package model.rules;
 public class SoftSevenTeenAmericanRuleWithPlayerWinStrategy implements Game {
   @Override
   public NewGameStrategy getNewGameStrategy() {
-    return null;
+    return new AmericanNewGameStrategy();
   }
 
   @Override
   public HitStrategy getHitStrategy() {
-    return null;
+    return new SoftSevenTeenHitStrategy();
   }
 
   @Override
   public WinStrategy getWinStrategy() {
-    return null;
+    return new PlayerWinStrategy();
   }
 
   @Override
-  public void accept(GameVisitor a_visitor) {}
+  public void accept(GameVisitor visitor) {
+    visitor.applyAmericanNewGameStrategy(this.getNewGameStrategy());
+    visitor.applySoftSevenTeenHitStrategy(this.getHitStrategy());
+    visitor.applyPlayerWinStrategy(this.getWinStrategy());
+  }
 }

@@ -3,7 +3,12 @@ package view;
 import controller.Player.InputMenu;
 
 /** Implements an english console view. */
-public class EnglishView implements View {
+public class EnglishView extends Input implements View {
+  private Input userChoice;
+
+  public EnglishView() {
+    userChoice = new Input();
+  }
 
   /** Shows a welcome message. */
   public void displayWelcomeMessage() {
@@ -20,26 +25,7 @@ public class EnglishView implements View {
    * @return the pressed character.
    */
   public InputMenu getInput() {
-    try {
-      int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      if (c == 'p') {
-        return InputMenu.PLAY;
-      } else if (c == 's') {
-        return InputMenu.STAND;
-      } else if (c == 'h') {
-        return InputMenu.HIT;
-      } else if (c == 'q') {
-        return InputMenu.QUIT;
-      } else {
-        return InputMenu.NOTVALID;
-      }
-    } catch (java.io.IOException e) {
-      System.out.println("" + e);
-      return InputMenu.NOTVALID;
-    }
+    return userChoice.getUserInput();
   }
 
   /**

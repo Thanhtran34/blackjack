@@ -3,7 +3,12 @@ package view;
 import controller.Player.InputMenu;
 
 /** Implements a Swedish console view. */
-public class SwedishView implements View {
+public class SwedishView extends Input implements View {
+  private Input userChoice;
+
+  public SwedishView() {
+    userChoice = new Input();
+  }
 
   /** Shows a welcome message. */
   public void displayWelcomeMessage() {
@@ -23,26 +28,7 @@ public class SwedishView implements View {
    * @return the pressed character.
    */
   public InputMenu getInput() {
-    try {
-      int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      if (c == 'p') {
-        return InputMenu.PLAY;
-      } else if (c == 's') {
-        return InputMenu.STAND;
-      } else if (c == 'h') {
-        return InputMenu.HIT;
-      } else if (c == 'q') {
-        return InputMenu.QUIT;
-      } else {
-        return InputMenu.NOTVALID;
-      }
-    } catch (java.io.IOException e) {
-      System.out.println("" + e);
-      return InputMenu.NOTVALID;
-    }
+    return userChoice.getUserInput();
   }
 
   /**
@@ -55,7 +41,7 @@ public class SwedishView implements View {
       try {
         Thread.sleep(1500);
         card.markCardOnTable();
-        System.out.println("\033[0;33m" + "***processing***");
+        System.out.println("\033[0;33m" + "***paus***");
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

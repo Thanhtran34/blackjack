@@ -1,8 +1,8 @@
 package model;
 
+import model.rules.Game;
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
-import model.rules.RulesFactory;
 import model.rules.WinStrategy;
 
 /** Represents a dealer player that handles the deck of cards and runs the game using rules. */
@@ -13,16 +13,12 @@ public class Dealer extends Player {
   private HitStrategy hitRule;
   private WinStrategy winStrategy;
 
-  /**
-   * Initializing constructor.
-   *
-   * @param rulesFactory - A factory that creates the rules to use.
-   */
-  public Dealer(RulesFactory rulesFactory) {
+  /** Initializing constructor. * */
+  public Dealer(Game g) {
 
-    newGameRule = rulesFactory.getNewGameRule();
-    hitRule = rulesFactory.getHitRule();
-    winStrategy = rulesFactory.getWinnerStrategy();
+    newGameRule = g.getNewGameStrategy();
+    hitRule = g.getHitStrategy();
+    winStrategy = g.getWinStrategy();
   }
 
   /**

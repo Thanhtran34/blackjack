@@ -7,8 +7,8 @@ public class Game {
   private Player player;
 
   /** Constructor that creates a new game instance with a dealer and player. */
-  public Game() {
-    dealer = new Dealer(new model.rules.RulesFactory());
+  public Game(model.rules.Game g) {
+    dealer = new Dealer(g);
     player = new Player();
   }
 

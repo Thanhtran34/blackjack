@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * A interface for Game Visitor.
+ * 
+ */
 public interface GameVisitor {
   void applyAmericanNewGameStrategy(NewGameStrategy newGameStrategy);
 

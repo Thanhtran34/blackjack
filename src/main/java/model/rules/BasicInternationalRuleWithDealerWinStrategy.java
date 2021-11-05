@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * A class for International style with Dealer Win Strategy.
+ * 
+ */
 public class BasicInternationalRuleWithDealerWinStrategy implements Game {
   @Override
   public NewGameStrategy getNewGameStrategy() {

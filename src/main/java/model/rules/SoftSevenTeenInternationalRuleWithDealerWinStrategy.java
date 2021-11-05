@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * A class for Soft17 with International style and Dealer Win strategy.
+ * 
+ */
 public class SoftSevenTeenInternationalRuleWithDealerWinStrategy implements Game {
   @Override
   public NewGameStrategy getNewGameStrategy() {

@@ -2,6 +2,10 @@ package view;
 
 import controller.Player;
 
+/**
+ * A class for input from user.
+ * 
+ */
 public class Input {
   /**
    * Returns pressed characters from the keyboard.

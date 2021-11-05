@@ -50,7 +50,7 @@ public class SwedishView implements View {
       String[] values = {
         "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio", "knekt", "dam", "kung",
         "ess"
-      };
+        };
       System.out.println(
           "\033[0;32m"
               + ""

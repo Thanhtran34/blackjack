@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * An interface for Game Abstract Factory (Abstract Factoty).
+ * 
+ */
 public interface GameAbstractFactory {
   Game createBasicAmericanRuleWithDealerWinStrategy();
 

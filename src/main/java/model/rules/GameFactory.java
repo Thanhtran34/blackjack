@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * A class for Game factory (concrete factory).
+ * 
+ */
 public class GameFactory implements GameAbstractFactory {
   @Override
   public Game createBasicAmericanRuleWithDealerWinStrategy() {

@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * A class for basic American style with Player Win Strategy.
+ * 
+ */
 public class BasicAmericanRuleWithPlayerWinStrategy implements Game {
   @Override
   public NewGameStrategy getNewGameStrategy() {

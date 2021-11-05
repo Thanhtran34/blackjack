@@ -3,7 +3,7 @@ package view;
 import controller.Player.InputMenu;
 
 /** Implements a Swedish console view. */
-public class SwedishView extends Input implements View {
+public class SwedishView implements View {
   private Input userChoice;
 
   public SwedishView() {
@@ -12,10 +12,7 @@ public class SwedishView extends Input implements View {
 
   /** Shows a welcome message. */
   public void displayWelcomeMessage() {
-    for (int i = 0; i < 50; i++) {
-      System.out.print("\n");
-    }
-
+    userChoice.createLines();
     System.out.println("Hej Black Jack Världen");
     System.out.println("----------------------");
     System.out.println(
@@ -53,7 +50,7 @@ public class SwedishView extends Input implements View {
       String[] values = {
         "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio", "knekt", "dam", "kung",
         "ess"
-        };
+      };
       System.out.println(
           "\033[0;32m"
               + ""

@@ -3,7 +3,7 @@ package view;
 import controller.Player.InputMenu;
 
 /** Implements an english console view. */
-public class EnglishView extends Input implements View {
+public class EnglishView implements View {
   private Input userChoice;
 
   public EnglishView() {
@@ -12,9 +12,7 @@ public class EnglishView extends Input implements View {
 
   /** Shows a welcome message. */
   public void displayWelcomeMessage() {
-    for (int i = 0; i < 50; i++) {
-      System.out.print("\n");
-    }
+    userChoice.createLines();
     System.out.println("Hello Black Jack World");
     System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
   }
@@ -28,10 +26,7 @@ public class EnglishView extends Input implements View {
     return userChoice.getUserInput();
   }
 
-  /**
-   * Method to display the card on the table.
-   * 
-   */
+  /** Method to display the card on the table. */
   public void displayCard(model.Card card) {
     if (card.isCardOnTable() == false) {
       try {

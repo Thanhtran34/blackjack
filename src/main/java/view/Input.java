@@ -35,9 +35,9 @@ public class Input {
     }
   }
 
-  /** Method to create lines for welcome message. */
+  /** Method to create lines.*/
   public void createLines() {
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 10; i++) {
       System.out.print("\n");
     }
   }

@@ -17,7 +17,7 @@ public class App {
   public static void main(String[] args) {
 
     GameAbstractFactory gameFactory = new GameFactory();
-    model.rules.Game game = gameFactory.createSoftSevenTeenAmericanRuleWithDealerWinStrategy();
+    model.rules.Game game = gameFactory.createSoftSevenTeenInternationalRuleWithDealerWinStrategy();
 
     Game g = new Game(game);
     View v = new EnglishView(); // new SwedishView();

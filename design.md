@@ -1,17 +1,33 @@
 # BlackJack OO-Design
-This document describes the current design. Note that some dependencies have been left out for readability reasons. For example there are a lot of dependencies to the Card class.
-
+This document shows the design for grade_3.
 ## Class Diagram
-The application uses the model-view-controller (MVC) architectural pattern. The view is passive and gets called from the controller. 
-
-![class diagram](img/class_diagram.jpg)
-
 
 The class diagram after modification for soft17 and winStrategy together with Observer pattern.
 
 ![new class diagram](img/class-diagram-changed.png)
 
-## Stand - Sequence Diagram
-This is the detailed sequence diagram for the `Game.stand` method. This is what should be implemented.
+The class diagram after Abstract Factory and Visitor design pattern
 
-![Stand Sequence diagram](img/stand_seq.jpg)
+![class diagram grade3](img/class-diagram-grade3.png)
+
+
+## Dependencies
+- There have many classes in the whole system diagram so the above class diagram only show important relations of new classes among model-view and controller. 
+
+- The model.rules.Game class has dependency relation with NewGameStrategy, HitStrategy and WinStrategy classes that are not shown in the class diagram for simplicity.
+
+- BasicAmericanRuleWithDealerWinStrategy class has dependency relation with AmericanNewGameStrategy, BasicHitStrategy and DealerWinStrategy classes.
+
+- BasicAmericanRuleWithPlayerWinStrategy class has dependency relation with AmericanNewGameStrategy, BasicHitStrategy and PlayerWinStrategy classes.
+
+- BasicInternationalRuleWithDealerWinStrategy class has dependency relation with InternationalNewGameStrategy, BasicHitStrategy and DealerWinStrategy classes.
+
+- BasicInternationalRuleWithPlayerWinStrategy class has dependency relation with InternationalNewGameStrategy, BasicHitStrategy and PlayerWinStrategy classes.
+
+- SoftSevenTeenAmericanRuleWithDealerWinStrategy class has dependency relation with AmericanNewGameStrategy, SoftSevenTeenHitStrategy and DealerWinStrategy classes.
+
+- SoftSevenTeenAmericanRuleWithPlayerWinStrategy class has dependency relation with AmericanNewGameStrategy, SoftSevenTeenHitStrategy and PlayerWinStrategy classes.
+
+- SoftSevenTeenInternationalRuleWithDealerWinStrategy class has dependency relation with InternationalNewGameStrategy, SoftSevenTeenHitStrategy and DealerWinStrategy classes.
+
+- SoftSevenTeenInternationalRuleWithPlayerWinStrategy class has dependency relation with InternationalNewGameStrategy, SoftSevenTeenHitStrategy and PlayerWinStrategy classes.

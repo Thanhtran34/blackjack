@@ -1,7 +1,7 @@
 package model.rules;
 
 /**
- * An interface for Game Abstract Factory (Abstract Factoty).
+ * An interface for Game Abstract Factory (Abstract Factory).
  * 
  */
 public interface GameAbstractFactory {
